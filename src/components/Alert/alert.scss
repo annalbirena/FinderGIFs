@@ -1,0 +1,12 @@
+.alert{
+    height: 250px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span{
+        font-size: 48px;
+        display: inline-block;
+    }
+}

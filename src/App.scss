@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+//Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
+:root {
+  --c-purple-primary: #6809E1;
+  --c-purple-secondary: #572EE5;
+  --c-bg: #FFFFFF;
+  --c-bg-gifts: #E7E7E7;
+  --c-black: #292922;
+  --c-placeholder: #3F3F3F;
+  --c-bg-li: #EEEEEE;
+  --c-border-li: #DDDDDD;
+}
+
+[data-theme="dark"] {
+  --c-bg: #373737;
+  --c-bg-gifts: #212121;
+  --c-purple-secondary: #FFFFFF;
+  --c-placeholder: #FFFFFF;
+  --c-bg-li: #998CEB;
+  --c-border-li: #DDDDDD;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html,
+button{
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  height: 100vh;
+  background-color: var(--c-bg);
+  text-align: center;
+  color: var(--c-purple-secondary);
+  transition: all 0.8s ease;
+}
+
+button{
+  cursor: pointer;
+}
+
+input,
+button{
+  outline: none;
+  background: none;
+}

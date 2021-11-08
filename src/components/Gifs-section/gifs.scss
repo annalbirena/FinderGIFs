@@ -1,0 +1,56 @@
+@import '../../App.scss';
+
+.gifs-section{
+    max-width: 900px;
+    margin: auto;
+}
+h2{
+    padding: 10px 0;
+}
+
+.grid-gifs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 47px ;
+    padding: 28px;
+    background-color: var(--c-bg-gifts);
+
+    figure{
+        justify-self: center;
+        height: 250px;
+        width: 250px;
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+}
+
+@media (max-width: $breakpoint-laptop) {
+    .gifs-section{
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .grid-gifs{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px 0 ;
+        padding: 28px;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .gifs-section{
+        max-width: 400px;
+        margin: auto;
+    }
+    .grid-gifs{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px 0 ;
+        padding: 28px;
+    }
+}
