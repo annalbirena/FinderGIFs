@@ -37,7 +37,7 @@ button{
 }
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--c-bg);
   text-align: center;
   color: var(--c-purple-secondary);

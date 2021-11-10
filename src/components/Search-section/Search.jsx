@@ -46,15 +46,15 @@ function Search() {
     useEffect(() => {
         //Ejecutara la peticion si se ingreso alguna letra en el input
         if (search.length > 0) {
-            const getData = async() => {
-                try{
+            const getData = async () => {
+                try {
                     //Ingresar como parametro tag term (termino a buscar) y limit (cantidad de gifts a obtener)
                     const resp = await getFetchAutocomplete(search, 5);
                     const info = await resp.json();
                     //Acciones luego de obtener la informacion
                     setSuggestionList(info.data);
-                }catch(e){
-                    console.error("Algo salio mal: ",e);
+                } catch (e) {
+                    console.error("Algo salio mal: ", e);
                 }
             }
             getData(); //Ejecutar funcion
@@ -65,17 +65,17 @@ function Search() {
     useEffect(() => {
         //Ejecutara la peticion si se ingreso algun termino
         if (term.length > 0) {
-            const getData = async() => {
-                try{
-                    setLoading(true); 
+            const getData = async () => {
+                try {
+                    setLoading(true);
                     //Ingresar como parametro tag term (termino a buscar) y limit (cantidad de gifts a obtener)
                     const resp = await getFetchSearch(term, 15);
                     const info = await resp.json();
                     //Acciones luego de obtener la informacion
                     setGifs(info.data);
                     setLoading(false);
-                }catch(e){
-                    console.error("Algo salio mal: ",e);
+                } catch (e) {
+                    console.error("Algo salio mal: ", e);
                 }
             }
             getData(); //Ejecutar funcion
@@ -95,19 +95,22 @@ function Search() {
                         <img src={darkTheme ? iconSearchLight : iconSearchDark} alt="searchicon" />
                     </button>
                 </form>
-                <div className={`${suggestionList.length > 0 && "suggestion-list"}`}>
-                    <ul>
-                        {suggestionList &&
-                            suggestionList.map(item => {
-                                return (
-                                    <li onClick={handleSearch}>
-                                        <img className="search-icon" src={darkTheme ? iconSearchDark : iconSearchLight} alt="searchicon" />
-                                        {item.name}
-                                    </li>
-                                )
-                            })}
-                    </ul>
-                </div>
+                {suggestionList.length > 0 &&
+                    (
+                        <div className="suggestion-list">
+                            <ul>
+                                {suggestionList.map(item => {
+                                    return (
+                                        <li onClick={handleSearch}>
+                                            <img className="search-icon" src={darkTheme ? iconSearchDark : iconSearchLight} alt="searchicon" />
+                                            {item.name}
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    )
+                }
             </div>
 
         </div>

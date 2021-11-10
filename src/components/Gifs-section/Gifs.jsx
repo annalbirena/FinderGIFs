@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import { useEffect, useContext } from "react";
 import { GifContext } from "../../context/gifContext";
 import Loader from "../Loader/Loader";
-import Alert from "../Alert/Alert";
+import NotFoundAlert from "../NotFoundAlert/NotFoundAlert";
 
 function Gifs() {
     //Contexto GifContext
@@ -34,9 +34,8 @@ function Gifs() {
             {loading ? (
                 <Loader />
             ) : (
-                gifs.length === 0 ? (
-                    <Alert />
-                ) : (
+                //gifs.length si es igual a 0 se considera falso de lo contrario es verdadero
+                gifs.length ? (
                     <div>
                         <h2>Resultados de la Busqueda</h2>
                         <div className="grid-gifs">
@@ -51,6 +50,9 @@ function Gifs() {
                             })}
                         </div>
                     </div>
+                    
+                ) : (
+                    <NotFoundAlert />
                 )
             )
             }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './alert.scss';
+import './notfoundalert.scss';
 
 function Alert(){
     return(
